@@ -116,11 +116,16 @@ function calculoTAE(){
   var subject = "Rastreador de Hipotecas";
   var cabecera = "Estimado Cliente\n";
   var body = fecha + cabecera;
-  body = body + "De acuerdo con las condiciones que Ud. nos indicó en el formulario, " +
+  body = body + "\nDe acuerdo con las condiciones que Ud. nos indicó en el formulario, " +
     "le informamos de que la mejor opcion para su hipoteca es la de " + bancoTAE + ", " +
       "con un Interes Nominal de " + interesNominal[i] + "%, " +
         " y un Valor Final de Hipoteca de " + valorFinalHipoteca + " €";
   body = body + "\n\n";
+  body = body + "Tambien, le ofrecemos los siguientes planes segun nuestra Base de Datos: \n\n";
+  for(i = 1;i <= 7;i++){
+    body = body + "Banco: " + banco[i] +"\t\tInteres Nominal: " + interesNominal[i+1] + "%\n";
+  }
+  body = body + "\nUn Saludo";
   
   Logger.log(body);
   
